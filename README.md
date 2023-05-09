@@ -13,7 +13,7 @@ To install the necessary packages, run
 
 `pip install -r requirements.txt`
 
-## To run this program and publish it on Github, you can follow these steps:
+## To run this program you can follow these steps:
 1. Clone the project using the command `git clone https://github.com/randhana/Drowning-Detection-.git`.
 2. Create a new folder called "videos" inside the project folder.
 3. Add sample videos to the "videos" folder.
