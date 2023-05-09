@@ -14,7 +14,14 @@ import albumentations
 from torch.utils.data import Dataset, DataLoader
 from PIL import Image
 import time
+import argparse
 
+# Define command-line arguments
+parser = argparse.ArgumentParser()
+parser.add_argument('--source', required=True, help='Video source file name')
+
+# Parse command-line arguments
+args = parser.parse_args()
 
 lb = joblib.load('lb.pkl')
 class CustomCNN(nn.Module):
@@ -52,11 +59,12 @@ aug = albumentations.Compose([
 
 t0 = time.time() #gives time in seconds after 1970
 
-def detectDrowning():
+def detectDrowning(source):
     isDrowning = False
     fram=0
     #input from the camera
-    cap = cv2.VideoCapture("videos/drowning.mp4")
+    cap = cv2.VideoCapture("videos/" + source)
+    
     if (cap.isOpened() == False):
         print('Error while trying to read video')
     frame_width = int(cap.get(3))
@@ -136,8 +144,6 @@ def detectDrowning():
             cv2.destroyAllWindows()
             exit()
 
-
-
-detectDrowning()
+detectDrowning(args.source)
 
 
