@@ -11,7 +11,14 @@ This project was developed by AI Society at CLS, with the aim to help the lifegu
 
 To install the necessary packages, run
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
+
+## To run this program and publish it on Github, you can follow these steps:
+1. Clone the project using the command `git clone https://github.com/randhana/Drowning-Detection-.git`.
+2. Create a new folder called "videos" inside the project folder.
+3. Add sample videos to the "videos" folder.
+4. Run the program by executing the command `python DrowningDetector.py --source video_file_name.mp4`.
+5. To quit the program, press the "q" key on your keyboard.
 
 If you are interested in YOLO object detection, read their website:
 
