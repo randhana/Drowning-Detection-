@@ -16,6 +16,7 @@ from PIL import Image
 import time
 import argparse
 
+
 # Define command-line arguments
 parser = argparse.ArgumentParser()
 parser.add_argument('--source', required=True, help='Video source file name')
@@ -145,5 +146,6 @@ def detectDrowning(source):
             exit()
 
 detectDrowning(args.source)
+
 
 
