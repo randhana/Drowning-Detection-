@@ -3,6 +3,10 @@ import cv2
 import os
 import numpy as np
 from .utils import download_file
+import serial
+from playsound import playsound
+import threading
+
 
 initialize = True
 net = None
@@ -59,6 +63,7 @@ def get_output_layers(net):
 
 
 def draw_bbox(img, bbox, labels, confidence, Drowning, write_conf=False):
+    ser = serial.Serial('COM3', 9600)  # open the serial port at 9600 baud
 
     global COLORS
     global classes
@@ -72,6 +77,9 @@ def draw_bbox(img, bbox, labels, confidence, Drowning, write_conf=False):
         if label == 'person' and Drowning:
             color = COLORS[0]
             label = 'DROWNING'
+            ser.write(b'on')  # send the string "on" followed by a newline character
+            # start playing the sound in a new thread
+            threading.Thread(target=play_sound).start()
         else:
             color = COLORS[1]
             label = 'NOT DROWNING'
@@ -85,7 +93,7 @@ def draw_bbox(img, bbox, labels, confidence, Drowning, write_conf=False):
         cv2.rectangle(img, (bbox[i][0],bbox[i][1]), (bbox[i][2],bbox[i][3]), color, 2)
 
         cv2.putText(img, label, (bbox[i][0],bbox[i][1]-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
-
+    ser.close()  # close the serial port
     return img
 
 def detect_common_objects(image, confidence=0.5, nms_thresh=0.3):
@@ -183,3 +191,7 @@ def detect_common_objects(image, confidence=0.5, nms_thresh=0.3):
         conf.append(confidences[i])
 
     return bbox, label, conf
+
+def play_sound():
+    # replace 'path/to/file.mp3' with the actual path to your mp3 file
+    playsound('sound/alarm.mp3')
