@@ -103,7 +103,7 @@ def detectDrowning(source):
                 outputs = model(pil_image)
                 _, preds = torch.max(outputs.data, 1)
 
-            print("Frame classified as: ",lb.classes_[preds])
+            print("Swimming status : ",lb.classes_[preds])
             if(lb.classes_[preds] =='drowning'):
                 isDrowning = True
             if(lb.classes_[preds] =='normal'):
