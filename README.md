@@ -1,16 +1,14 @@
 # Drowning-Detector
-Using YOLO object detection, this program will detect if a person is drowning. This software can be used with a Raspberry Pi Camera, which can then be placed underwater with an appropiate case.
 
-The approach to this project is to first detect a person, drawing a blue rectangle around them. The program will now store the centre of that rectangle (the person's) position, and compare it to the person's position is more or less the same or they are falling, and this continues for 10 seconds, the blue rectangle will now turn red and the word 'DROWNING' will appear on top of it.
 
-If the person´s centre is above water, the word ´DROWNING´ will be removed as they are just standing in the pool. 
+Introducing our drowning detection system, designed to detect and alert when someone is in danger of drowning.
+Our system uses computer vision algorithms to analyze video feeds from multiple cameras around a pool or other bodies of water.
 
-Doing some research, I discovered that when someone drowns, they tend to stay in a vertical position to try to keep their head above water level. This could be analysed by seeing the ratio of height to width of the triangle to determine if the person is vertically (drowning) or horizontally (swimming or diving) positioned.
+The system works by using a deep learning-based object detection model to identify a person in the water. The model is trained on thousands of images and videos of people in water environments, allowing it to accurately recognize a human body in a variety of positions and lighting conditions. Once a person is detected, the system uses motion analysis algorithms to track their movements and monitor their safety.
 
-This project was developed by AI Society at CLS, with the aim to help the lifeguards in the school´s swimming pool. 
+Overall, the drowning detection system provides an innovative and effective solution for ensuring the safety of people in and around swimming pools. By leveraging advanced computer vision and machine learning technologies, the system can quickly and accurately identify potential drowning incidents and alert caregivers, ultimately helping to save lives.
 
 To install the necessary packages, run
-
 `pip install -r requirements.txt`
 
 ## To run this program you can follow these steps:
