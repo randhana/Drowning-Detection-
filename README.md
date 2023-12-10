@@ -13,17 +13,17 @@ Overall, the drowning detection system provides an innovative and effective solu
 To set up the Drowning Detection project, follow these steps:
 
 1. **Clone the Project:**
-   ```bash
+```bash
    git clone https://github.com/randhana/Drowning-Detection-.git
-
+```
 2. **Create a Virtual Environment:**
 ```bash
   python -m venv env
 ```
 3. **Install Requirements:**
-   ```bash
-     pip install -r requirements.txt
-   ```
+```bash
+   pip install -r requirements.txt
+```
 
 # Usage
 
