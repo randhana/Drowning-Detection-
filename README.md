@@ -8,18 +8,40 @@ The system works by using a deep learning-based object detection model to identi
 
 Overall, the drowning detection system provides an innovative and effective solution for ensuring the safety of people in and around swimming pools. By leveraging advanced computer vision and machine learning technologies, the system can quickly and accurately identify potential drowning incidents and alert caregivers, ultimately helping to save lives.
 
-To install the necessary packages, run
-`pip install -r requirements.txt`
+## Installation
 
-## To run this program you can follow these steps:
-1. Clone the project using the command `git clone https://github.com/randhana/Drowning-Detection-.git`.
-2. Create a new folder called "videos" inside the project folder.
-3. Add sample videos to the "videos" folder.
-4. Run the program by executing the command `python DrowningDetector.py --source video_file_name.mp4`.
+To set up the Drowning Detection project, follow these steps:
+
+1. **Clone the Project:**
+   ```bash
+   git clone https://github.com/randhana/Drowning-Detection-.git
+
+2. **Create a Virtual Environment:**
+```bash
+  python -m venv env
+```
+3. **Install Requirements:**
+   ```bash
+     pip install -r requirements.txt
+   ```
+
+# Usage
+
+To run the program, follow these steps:
+
+1. **Create a "videos" Folder:**
+   - Inside the project folder, create a new folder called "videos."
+
+2. **Add Sample Videos:**
+   - Place sample videos into the "videos" folder.
+
+3. **Run the Program:**
+   ```bash
+   python DrowningDetector.py --source video_file_name.mp4
 5. To quit the program, press the "q" key on your keyboard.
 
-[Here's](https://youtu.be/99GdhIozAQ8) a demonstration video of our drowning detection system in action
 
+[Here's](https://youtu.be/99GdhIozAQ8) a demonstration video of our drowning detection system in action
 
 If you are interested in YOLO object detection, read their website:
 
