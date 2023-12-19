@@ -37,7 +37,7 @@ To run the program, follow these steps:
 
 3. **Run the Program:**
    ```bash
-   python DrowningDetector.py --source video_file_name.mp4
+   python DrownDetect.py --source video_file_name.mp4
 5. To quit the program, press the "q" key on your keyboard.
 
 
