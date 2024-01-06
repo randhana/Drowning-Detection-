@@ -38,7 +38,7 @@ def get_output_layers(net):
 
 
 def draw_bbox(img, bbox, labels, confidence, Drowning, write_conf=False):
-    ser = serial.Serial('COM3', 9600)  # open the serial port at 9600 baud
+    #ser = serial.Serial('COM3', 9600)  # open the serial port at 9600 baud
 
     global COLORS
     global classes
@@ -52,7 +52,7 @@ def draw_bbox(img, bbox, labels, confidence, Drowning, write_conf=False):
         if label == 'person' and Drowning:
             color = COLORS[1]
             label = 'ALERT DROWNING'
-            ser.write(b'on')  # send the string "on" 
+            #ser.write(b'on')  # send the string "on" 
             
             threading.Thread(target=play_sound).start()
         else:
@@ -68,7 +68,7 @@ def draw_bbox(img, bbox, labels, confidence, Drowning, write_conf=False):
         cv2.rectangle(img, (bbox[i][0],bbox[i][1]), (bbox[i][2],bbox[i][3]), color, 2)
 
         cv2.putText(img, label, (bbox[i][0],bbox[i][1]-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
-    ser.close()  # close the serial port
+    #ser.close()  # close the serial port
     return img
 
 def detect_common_objects(image, confidence=0.5, nms_thresh=0.3):
