@@ -24,20 +24,23 @@ def download_file(url, file_name, dest_dir):
     chunk_size = 1024
     num_bars = round(file_size / chunk_size)
 
-    bar = pb.ProgressBar(maxval=num_bars).start()
-    
+    bar = pb.ProgressBar(maxval=num_bars + 1).start()  # Increment maxval by 1
+
     if r.status_code != requests.codes.ok:
         print("Error occurred while downloading file")
         return None
 
     count = 0
-    
+
     with open(full_path_to_file, 'wb') as file:
-        for chunk in  r.iter_content(chunk_size=chunk_size):
+        for chunk in r.iter_content(chunk_size=chunk_size):
             file.write(chunk)
-            bar.update(count)
-            count +=1
+            count += 1
+            if count <= num_bars:
+                bar.update(count)  # Update progress bar inside the loop
+            else:
+                bar.update(num_bars)  # Ensure progress bar doesn't go out of range
+
+    bar.finish()  # Finish the progress bar
 
     return full_path_to_file
-    
-        
