@@ -12,9 +12,13 @@ Overall, the drowning detection system provides an innovative and effective solu
 
 To set up the Drowning Detection project, follow these steps:
 
-1. **Clone the Project:**
+1. **Clone the Project:** (With Test Sample Videos):
 ```bash
    git clone https://github.com/randhana/Drowning-Detection-.git
+```
+   **Clone the Project:** Without Test Sample Videos - Lightweight Version
+```bash
+   git clone --branch lightweight https://github.com/randhana/Drowning-Detection-.git
 ```
 2. **Create a Virtual Environment:**
 ```bash
