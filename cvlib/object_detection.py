@@ -10,8 +10,11 @@ import threading
 
 initialize = True
 net = None
-dest_dir = os.path.expanduser('~') + os.path.sep + '.cvlib' + os.path.sep + 'object_detection' + os.path.sep + 'yolo' + os.path.sep + 'yolov3'
 classes = None
+#set the resources directory
+project_dir = os.path.dirname(os.path.abspath(__file__))
+dest_dir = os.path.join(project_dir, 'resources', 'object_detection', 'yolo', 'yolov3')
+
 #colors are BGR instead of RGB in python
 #COLORS = [0,0,255], [255,0,0]
 COLORS = [(0, 255, 0), (0, 0, 255), (255, 255, 255)]  # Add a third color (white) to the list
